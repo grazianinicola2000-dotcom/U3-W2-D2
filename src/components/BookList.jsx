@@ -25,23 +25,25 @@ const BookList = function (props) {
           </Form.Group>
         </Form>
       </Container>
-      <Container className="d-flex justify-content-between flex-wrap gap-3">
+      <Container>
         <Row>
-          <Col xs={6}>
+          <Col xs={6} className="row gx-3">
             {books
               .filter((book) => book.title.toLowerCase().includes(searchQuery.toLowerCase()))
               .map((book) => (
-                <SingleBook
-                  onClick={() => {
-                    setSelected(book.asin);
-                  }}
-                  key={book.asin}
-                  asin={book.asin}
-                  img={book.img}
-                  title={book.title}
-                  price={book.price}
-                  selected={selected}
-                />
+                <Col xs={6}>
+                  <SingleBook
+                    onClick={() => {
+                      setSelected(book.asin);
+                    }}
+                    key={book.asin}
+                    asin={book.asin}
+                    img={book.img}
+                    title={book.title}
+                    price={book.price}
+                    selected={selected}
+                  />
+                </Col>
               ))}
           </Col>
           <Col xs={6}>{selected && <CommentArea asin={selected} />}</Col>

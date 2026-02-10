@@ -1,6 +1,6 @@
 const SingleBook = function (props) {
   return (
-    <div onClick={props.onClick} className={`${props.selected === props.asin ? "border border-5 border-danger mb-3 card p-0 rounded-4" : "mb-3 card p-0"}`}>
+    <div onClick={props.onClick} className={`${props.selected === props.asin ? "border border-5 border-danger mb-3 card p-0 rounded-4" : " mb-3 card p-0"}`}>
       <img src={props.img} className="card-img-top" alt="book_cover" />
       <div className="card-body d-flex flex-column justify-content-between">
         <div>
