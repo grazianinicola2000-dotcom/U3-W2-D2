@@ -31,12 +31,11 @@ const BookList = function (props) {
             {books
               .filter((book) => book.title.toLowerCase().includes(searchQuery.toLowerCase()))
               .map((book) => (
-                <Col xs={6}>
+                <Col xs={6} key={book.asin}>
                   <SingleBook
                     onClick={() => {
                       setSelected(book.asin);
                     }}
-                    key={book.asin}
                     asin={book.asin}
                     img={book.img}
                     title={book.title}
